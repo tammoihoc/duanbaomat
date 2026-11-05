@@ -1,0 +1,44 @@
+// src/main/java/com/shoppc/backendnosecurity/config/CryptoKeys.java
+package com.shoppc.backendnosecurity.config;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CryptoKeys {
+    
+    // ===== AES KEYS (256-bit) - PHẢI ĐÚNG 32 BYTES =====
+    // Tạo bằng Base64 encoder, mỗi key có 44 ký tự
+    public static final String USER_KEY = "REPLACE_WITH_YOUR_USER_KEY";
+    public static final String PRODUCT_KEY = USER_KEY;
+    public static final String ORDER_KEY = USER_KEY;
+    public static final String CART_KEY = USER_KEY;
+    public static final String ADDRESS_KEY = USER_KEY;
+
+    // ===== RSA KEYS =====
+    // Để đơn giản, dùng key mặc định của BouncyCastle
+    public static final String RSA_PUBLIC_KEY = 
+        "REPLACE_WITH_YOUR_RSA_PUBLIC_KEY";
+
+    public static final String RSA_PRIVATE_KEY = 
+        "REPLACE_WITH_YOUR_RSA_PRIVATE_KEY";
+
+    public static String getPublicKey() {
+        return RSA_PUBLIC_KEY;
+    }
+
+    public static String getPrivateKey() {
+        return RSA_PRIVATE_KEY;
+    }
+
+    public static Map<String, String> getAllKeys() {
+        Map<String, String> keys = new HashMap<>();
+        keys.put("user", USER_KEY);
+        keys.put("product", PRODUCT_KEY);
+        keys.put("order", ORDER_KEY);
+        keys.put("cart", CART_KEY);
+        keys.put("address", ADDRESS_KEY);
+        keys.put("publicKey", RSA_PUBLIC_KEY);
+        keys.put("privateKey", RSA_PRIVATE_KEY);
+        return keys;
+    }
+}

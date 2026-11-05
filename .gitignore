@@ -1,0 +1,27 @@
+# Local credentials and machine configuration
+.env
+.env.*
+!.env.example
+*.local
+*.log
+*.pem
+*.key
+*.jks
+*.keystore
+/docker-compose.yml
+/backendnosecurity/src/main/resources/application.properties
+/backendnosecurity/src/main/java/com/shoppc/backendnosecurity/config/CryptoKeys.java
+
+# Dependencies, build output, uploads, and editor files
+**/node_modules/
+**/target/
+**/build/
+**/dist/
+**/uploads/
+**/.idea/
+**/.vscode/
+**/__pycache__/
+*.iml
+*.bak
+.DS_Store
+.local/

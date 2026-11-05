@@ -1,0 +1,151 @@
+.product-slider-section {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  padding: 0 4px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.slider-title-wrapper {
+  position: relative;
+}
+
+.slider-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.title-decoration {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+  border-radius: 3px;
+}
+
+.view-all-link {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.view-all-link:hover {
+  transform: translateX(5px);
+}
+
+/* ========== QUAN TRỌNG: Khung bọc Swiper ========== */
+.slider-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Swiper Container - GIỚI HẠN TRONG KHUNG */
+.product-swiper {
+  padding: 10px 5px 40px 5px;
+  overflow: visible;
+}
+
+/* ========== CUSTOM SWIPER STYLES - Không bị tràn ========== */
+.product-swiper .swiper {
+  overflow: visible !important;
+}
+
+.product-swiper .swiper-wrapper {
+  padding: 5px 0;
+}
+
+/* ========== Nút điều hướng - Đặt trong khung ========== */
+.product-swiper .swiper-button-prev,
+.product-swiper .swiper-button-next {
+  width: 38px;
+  height: 38px;
+  background: var(--bg-card);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.product-slider-section:hover .swiper-button-prev,
+.product-slider-section:hover .swiper-button-next {
+  opacity: 1;
+  visibility: visible;
+}
+
+.product-swiper .swiper-button-prev {
+  left: -15px;
+}
+
+.product-swiper .swiper-button-next {
+  right: -15px;
+}
+
+.product-swiper .swiper-button-prev::after,
+.product-swiper .swiper-button-next::after {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.product-swiper .swiper-button-prev:hover,
+.product-swiper .swiper-button-next:hover {
+  background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+}
+
+.product-swiper .swiper-button-prev:hover::after,
+.product-swiper .swiper-button-next:hover::after {
+  color: white;
+}
+
+/* ========== Pagination ========== */
+.product-swiper .swiper-pagination {
+  bottom: 0;
+}
+
+.product-swiper .swiper-pagination-bullet {
+  background: var(--text-secondary);
+  opacity: 0.5;
+  width: 8px;
+  height: 8px;
+}
+
+.product-swiper .swiper-pagination-bullet-active {
+  background: #00d4ff;
+  opacity: 1;
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1024px) {
+  .product-swiper .swiper-button-prev,
+  .product-swiper .swiper-button-next {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-title {
+    font-size: 20px;
+  }
+  
+  .product-swiper {
+    padding: 5px 2px 35px 2px;
+  }
+}
